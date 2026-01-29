@@ -54,7 +54,7 @@ const Navbar = () => {
           >
             <Coffee className="h-6 w-6 text-accent" />
             <span className="font-serif text-xl font-bold text-secondary">
-              Cafe Chapter One
+             Earth cafe
             </span>
           </a>
 
