@@ -9,7 +9,7 @@ const Footer = () => {
           <div className="flex items-center gap-2">
             <Coffee className="h-6 w-6 text-accent" />
             <span className="font-serif text-xl font-bold text-primary-foreground">
-              Cafe Chapter One
+              Earth cafe
             </span>
           </div>
 
@@ -24,7 +24,7 @@ const Footer = () => {
 
           {/* Copyright */}
           <p className="font-sans text-xs text-primary-foreground/40">
-            © {new Date().getFullYear()} Cafe Chapter One. All rights reserved.
+            © {new Date().getFullYear()} Earth cafe. All rights reserved.
           </p>
         </div>
       </div>
