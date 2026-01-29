@@ -52,7 +52,7 @@ const Navbar = () => {
               window.scrollTo({ top: 0, behavior: "smooth" });
             }}
           >
-            <Coffee className="h-6 w-6 text-accent" />
+            <Coffee className="h-16 w-16 text-accent" />
             <span className="font-serif text-xl font-bold text-secondary">
              Earth cafe
             </span>
