@@ -9,7 +9,7 @@ import heroImage3 from "@/assets/hero-slide-3.jpg";
 const slides = [
   {
     image: heroImage1,
-    title: "Cafe Chapter One",
+    title: "Earth cafe",
     subtitle: "Est. 2024 • Artisan Coffee",
     description: "Where every cup tells a story. Experience artisan coffee crafted with passion in a warm, welcoming atmosphere.",
   },
