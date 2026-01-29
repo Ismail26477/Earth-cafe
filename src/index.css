@@ -1,0 +1,205 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Warm Cafe Color Palette */
+    --background: 40 33% 97%;
+    --foreground: 25 30% 12%;
+
+    --card: 40 40% 95%;
+    --card-foreground: 25 30% 12%;
+
+    --popover: 40 40% 95%;
+    --popover-foreground: 25 30% 12%;
+
+    /* Rich Espresso Brown */
+    --primary: 25 45% 22%;
+    --primary-foreground: 40 33% 97%;
+
+    /* Warm Cream */
+    --secondary: 35 40% 90%;
+    --secondary-foreground: 25 30% 15%;
+
+    --muted: 35 25% 88%;
+    --muted-foreground: 25 15% 45%;
+
+    /* Golden Accent */
+    --accent: 38 70% 50%;
+    --accent-foreground: 25 30% 12%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 35 30% 85%;
+    --input: 35 30% 85%;
+    --ring: 38 70% 50%;
+
+    --radius: 0.5rem;
+
+    /* Custom Cafe Variables */
+    --espresso: 25 45% 18%;
+    --cream: 40 45% 94%;
+    --gold: 38 70% 50%;
+    --warm-brown: 25 35% 30%;
+    --latte: 35 30% 80%;
+    
+    /* Gradients */
+    --gradient-hero: linear-gradient(180deg, hsla(25, 45%, 18%, 0.7) 0%, hsla(25, 45%, 12%, 0.9) 100%);
+    --gradient-gold: linear-gradient(135deg, hsl(38, 70%, 50%) 0%, hsl(30, 60%, 45%) 100%);
+    --gradient-warm: linear-gradient(180deg, hsl(40, 33%, 97%) 0%, hsl(35, 40%, 92%) 100%);
+    
+    /* Shadows */
+    --shadow-soft: 0 4px 20px -4px hsla(25, 45%, 18%, 0.15);
+    --shadow-card: 0 8px 30px -8px hsla(25, 45%, 18%, 0.12);
+    --shadow-hover: 0 12px 40px -8px hsla(25, 45%, 18%, 0.2);
+    --shadow-gold: 0 8px 25px -5px hsla(38, 70%, 50%, 0.3);
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 25 30% 8%;
+    --foreground: 40 33% 95%;
+
+    --card: 25 25% 12%;
+    --card-foreground: 40 33% 95%;
+
+    --popover: 25 25% 12%;
+    --popover-foreground: 40 33% 95%;
+
+    --primary: 38 70% 50%;
+    --primary-foreground: 25 30% 8%;
+
+    --secondary: 25 20% 18%;
+    --secondary-foreground: 40 33% 95%;
+
+    --muted: 25 20% 18%;
+    --muted-foreground: 35 15% 60%;
+
+    --accent: 38 70% 50%;
+    --accent-foreground: 25 30% 8%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 25 20% 20%;
+    --input: 25 20% 20%;
+    --ring: 38 70% 50%;
+    
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-serif;
+  }
+}
+
+@layer components {
+  /* Hero Overlay */
+  .hero-overlay {
+    background: var(--gradient-hero);
+  }
+  
+  /* Gold Button Glow */
+  .btn-gold-glow {
+    box-shadow: var(--shadow-gold);
+  }
+  
+  /* Card Hover Effect */
+  .card-hover {
+    @apply transition-all duration-500 ease-out;
+    box-shadow: var(--shadow-card);
+  }
+  
+  .card-hover:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-hover);
+  }
+  
+  /* Elegant Underline Animation */
+  .elegant-underline {
+    @apply relative;
+  }
+  
+  .elegant-underline::after {
+    content: '';
+    @apply absolute bottom-0 left-0 w-0 h-0.5 transition-all duration-300 ease-out;
+    background: hsl(var(--accent));
+  }
+  
+  .elegant-underline:hover::after {
+    @apply w-full;
+  }
+  
+  /* Section Divider */
+  .section-divider {
+    @apply w-20 h-0.5 mx-auto;
+    background: var(--gradient-gold);
+  }
+  
+  /* Image Scale on Hover */
+  .img-zoom {
+    @apply overflow-hidden;
+  }
+  
+  .img-zoom img {
+    @apply transition-transform duration-700 ease-out;
+  }
+  
+  .img-zoom:hover img {
+    @apply scale-110;
+  }
+  
+  /* Text Shadow for Hero */
+  .text-shadow {
+    text-shadow: 0 2px 10px hsla(25, 45%, 12%, 0.5);
+  }
+  
+  /* Warm Background Gradient */
+  .bg-warm-gradient {
+    background: var(--gradient-warm);
+  }
+}
+
+@layer utilities {
+  /* Smooth scroll reveal animation */
+  .reveal {
+    @apply opacity-0 translate-y-8 transition-all duration-700 ease-out;
+  }
+  
+  .reveal.visible {
+    @apply opacity-100 translate-y-0;
+  }
+}
